@@ -1,0 +1,8 @@
+.cache/
+.DS_Store
+.env
+dist/
+node_modules/
+netlify/functions/onrequest/**
+!netlify/functions/onrequest/index.js
+gulpfile.js
