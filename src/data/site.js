@@ -15,6 +15,7 @@ module.exports = () => {
       facebook: 'https://www.facebook.com/Agenzia-immobiliare-Valcalepio-551357054962575/',
       instagram: '#',
       linkedin: 'https://www.linkedin.com/in/sergio-manenti-b7214855/',
+      youtube: 'https://youtube.com/@immobiliarevalcalepio',
       google: 'https://g.page/agenzia-immobiliare-valcalepio?share'
     }
   };
