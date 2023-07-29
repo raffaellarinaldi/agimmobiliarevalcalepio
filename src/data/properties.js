@@ -3,8 +3,9 @@ const EleventyFetch = require("@11ty/eleventy-fetch");
 
 const fetchHtml = async (url) => {
   return EleventyFetch(url, {
-    duration: '1d', // Cache duration set to 1 day
+    duration: '0s', // Always fetch new requests
     type: 'text', // Cache response as text
+    dryRun: true
   });
 };
 
