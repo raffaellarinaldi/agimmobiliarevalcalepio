@@ -42,7 +42,7 @@
     "stellar.js": "^0.6.5"
   },
   "dependencies": {
-    "@11ty/eleventy": "^1.0.2",
+    "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-fetch": "^4.0.0",
     "cheerio": "^1.0.0-rc.12",
     "html-minifier": "^4.0.0",
