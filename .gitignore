@@ -3,6 +3,7 @@
 .env
 dist/
 node_modules/
-netlify/functions/onrequest/**
+netlify/**
+netlify.toml
 /src/util/
 CHANGELOG.md
