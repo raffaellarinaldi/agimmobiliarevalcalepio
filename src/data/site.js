@@ -18,5 +18,5 @@ module.exports = () => {
       youtube: 'https://youtube.com/@immobiliarevalcalepio',
       google: 'https://g.page/agenzia-immobiliare-valcalepio?share'
     }
-  };
-};
+  }
+}

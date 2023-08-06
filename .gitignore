@@ -4,5 +4,5 @@
 dist/
 node_modules/
 netlify/functions/onrequest/**
-!netlify/functions/onrequest/index.js
-gulpfile.js
+/src/util/
+CHANGELOG.md
