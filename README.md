@@ -1,6 +1,7 @@
 # Setup Website for Agenzia Immobiliare VALCALEPIO
 
-Open your preferred terminal application. Create your project directory and move into it.
+First, make sure you installed all required global dependencies.
+Then, open your preferred terminal application.
 
 ```
 mkdir /your/preferred/project/location/
@@ -11,10 +12,6 @@ Copy the code out of the GitHub repository.
 
 `git clone https://github.com/raffaellarinaldi/agenziavalcalepio.git .
 checkout`
-
-Install all the Node packages.
-
-`npm install`
 
 ## [https://agenziavalcalepio.bg.it/](https://agenziavalcalepio.bg.it/)
 
@@ -29,5 +26,6 @@ Open your browser and visit the local copy of the site.
 ## Build HTML Source Files
 
 To generate the HTML source files in the `dist/` directory.
+Remember to run this command to save static assets for Netlify before committing.
 
 `npm run build`
