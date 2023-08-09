@@ -6,9 +6,9 @@ htmlmin = require('html-minifier').minify
 module.exports = (eleventyConfig) => {
   eleventyConfig.setQuietMode(true)
   // require('./src/util/.eleventy')(eleventyConfig)
-  // eleventyConfig.addPassthroughCopy({
-  //   './src/static': './'
-  // })
+  eleventyConfig.addPassthroughCopy({
+    './src/static': './'
+  })
   // Copied for bugfixing purposes, workaround
     eleventyConfig.setTemplateFormats('html,liquid,njk')
     //eleventyConfig.addTransform('minifyHTML', require('./libraries/minifier'))
