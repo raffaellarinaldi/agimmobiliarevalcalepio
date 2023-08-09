@@ -30,10 +30,10 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addLayoutAlias('base', '../layouts/base.njk')
   eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
     name: 'onrequest',
-    functionsDir: './netlify/functions/',
-    copy: [
-      { from: 'src/util', to: 'src/util' }
-    ]
+    functionsDir: './netlify/functions/'
+    // copy: [
+    //   { from: 'src/util', to: 'src/util' }
+    // ]
   })
   return {
     passthroughFileCopy: true,
