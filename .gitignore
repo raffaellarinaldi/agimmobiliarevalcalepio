@@ -5,5 +5,4 @@ dist/
 node_modules/
 netlify/**
 netlify.toml
-/src/util/
 CHANGELOG.md
