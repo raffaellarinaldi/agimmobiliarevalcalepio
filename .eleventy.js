@@ -1,13 +1,33 @@
 const
 { EleventyServerlessBundlerPlugin } = require('@11ty/eleventy'),
 htmlmin = require('html-minifier').minify
+//Copied for bugfixing purposes
+const htmlmin = require('html-minifier').minify
 
 module.exports = (eleventyConfig) => {
   require('./src/util/.eleventy')(eleventyConfig)
   eleventyConfig.setQuietMode(true)
-  eleventyConfig.addPassthroughCopy({
-    './src/static': './'
-  })
+  // eleventyConfig.addPassthroughCopy({
+  //   './src/static': './'
+  // })
+  // Copied for bugfixing purposes, workaround
+    eleventyConfig.setTemplateFormats('html,liquid,njk')
+    eleventyConfig.addTransform('minifyHTML', require('./libraries/minifier'))
+    eleventyConfig.addShortcode('date', () => `${new Date().toISOString().slice(0, 10)}`)
+    eleventyConfig.addNunjucksShortcode('year', () => `${new Date().getFullYear()}`)
+    eleventyConfig.addShortcode('11ty_version', () => require('@11ty/eleventy/package.json').version)
+    module.exports = (content, outputPath) => {
+	    if (outputPath && outputPath.endsWith('.html') && process.env.ELEVENTY_ENV !== 'development') {
+		    return htmlmin(content, {
+			    collapseWhitespace: true,
+			    conservativeCollapse: true,
+			    removeComments: true,
+			    useShortDoctype: true
+		    })
+	   }
+	  return content
+  }  
+  // Endcopied
   eleventyConfig.addLayoutAlias('base', '../layouts/base.njk')
   eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
     name: 'onrequest',
