@@ -1,12 +1,11 @@
 const
 { EleventyServerlessBundlerPlugin } = require('@11ty/eleventy'),
-htmlmin = require('html-minifier').minify
 //Copied for bugfixing purposes
-const htmlmin = require('html-minifier').minify
+htmlmin = require('html-minifier').minify
 
 module.exports = (eleventyConfig) => {
-  require('./src/util/.eleventy')(eleventyConfig)
   eleventyConfig.setQuietMode(true)
+  // require('./src/util/.eleventy')(eleventyConfig)
   // eleventyConfig.addPassthroughCopy({
   //   './src/static': './'
   // })
