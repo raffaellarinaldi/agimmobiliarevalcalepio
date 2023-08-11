@@ -4,4 +4,6 @@
 dist/
 node_modules/
 netlify/functions/onrequest/**
+!netlify/functions/onrequest/index.js
+!netlify/functions/onrequest/src/util/**
 CHANGELOG.md
