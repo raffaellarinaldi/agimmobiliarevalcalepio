@@ -1,17 +1,35 @@
 const
 { EleventyServerlessBundlerPlugin } = require('@11ty/eleventy'),
+//Copied for bugfixing purposes
 htmlmin = require('html-minifier').minify
 
 module.exports = (eleventyConfig) => {
   eleventyConfig.setQuietMode(true)
-  require('./src/util/.eleventy')(eleventyConfig)
+  //require('./src/util/.eleventy')(eleventyConfig)
   eleventyConfig.addPassthroughCopy({
     './src/static': './'
   })
+  // Copied for bugfixing purposes, workaround
+    eleventyConfig.setTemplateFormats('html,liquid,njk')
+    eleventyConfig.addShortcode('date', () => `${new Date().toISOString().slice(0, 10)}`)
+    eleventyConfig.addNunjucksShortcode('year', () => `${new Date().getFullYear()}`)
+    eleventyConfig.addShortcode('11ty_version', () => require('@11ty/eleventy/package.json').version)
+    module.exports = (content, outputPath) => {
+	    if (outputPath && outputPath.endsWith('.html') && process.env.ELEVENTY_ENV !== 'development') {
+		    return htmlmin(content, {
+			    collapseWhitespace: true,
+			    conservativeCollapse: true,
+			    removeComments: true,
+			    useShortDoctype: true
+		    })
+	   }
+	  return content
+  }  
+  // Endcopied
   eleventyConfig.addLayoutAlias('base', '../layouts/base.njk')
   eleventyConfig.addPlugin(EleventyServerlessBundlerPlugin, {
     name: 'onrequest',
-    functionsDir: './netlify/functions/',
+    functionsDir: './netlify/functions/'
     copy: [
       { from: 'src/util', to: 'src/util' }
     ]
