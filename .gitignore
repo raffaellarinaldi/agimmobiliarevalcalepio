@@ -3,5 +3,7 @@
 .env
 dist/
 node_modules/
-netlify/**
+netlify/functions/onrequest/**
+!netlify/functions/onrequest/src/util/**
+!netlify/functions/onrequest/index.js
 CHANGELOG.md
