@@ -1,7 +1,7 @@
 const
-{ EleventyServerlessBundlerPlugin } = require('@11ty/eleventy')
+{ EleventyServerlessBundlerPlugin } = require('@11ty/eleventy'),
 //Copied for bugfixing purposes
-//htmlmin = require('html-minifier').minify
+htmlmin = require('html-minifier').minify
 
 module.exports = (eleventyConfig) => {
   //eleventyConfig.setQuietMode(true)
