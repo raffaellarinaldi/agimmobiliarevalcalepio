@@ -1,10 +1,10 @@
-const cheerio = require('cheerio'), EleventyFetch = require("@11ty/eleventy-fetch");
+const cheerio = require('cheerio'), EleventyFetch = require('@11ty/eleventy-fetch');
 
 const fetchHtml = async (url) => {
   return EleventyFetch(url, {
     duration: '0s', // Always fetch new requests
     type: 'text', // Cache response as text
-    directory: "/tmp/.cache/",
+    directory: '/tmp/.cache/',
     dryRun: false
   });
 };
