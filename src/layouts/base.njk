@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="it">
+	<head>
+		<title>{{ site.title }}</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="{{ description if description else site.description }}">
+		<meta name="generator" content="Eleventy {% 11ty_version %}">
+		<link rel="icon" type="image/x-icon" href="{{ '/favicon.ico' | url }}">
+		<link rel="stylesheet" type="text/css" href="{{ '/assets/fonts/icomoon/icomoon.css' | url }}">
+		<link rel="stylesheet" type="text/css" href="{{ '/assets/fonts/flaticon/flaticon.css' | url }}">
+		<link rel="stylesheet" type="text/css" href="{{ '/assets/css/tiny-slider.min.css' | url }}">
+		<link rel="stylesheet" type="text/css" href="{{ '/assets/css/aos.min.css' | url }}">
+		<link rel="stylesheet" type="text/css" href="{{ '/assets/css/styles.min.css' | url }}">
+	</head>
+	<body>
+		{% block content %}{% endblock %}
+		<div id="overlayer"></div>
+		<div class="loader">
+			<div class="spinner-border" role="status">
+				<span class="visually-hidden">Loading...</span>
+			</div>
+		</div>
+		<script type="text/javascript" src="{{ '/assets/js/bootstrap.bundle.min.js' | url }}"></script>
+		<script type="text/javascript" src="{{ '/assets/js/tiny-slider.min.js' | url }}"></script>
+		<script type="text/javascript" src="{{ '/assets/js/aos.min.js' | url }}"></script>
+		<script type="text/javascript">{% include '../assets/js/modules/navbar.js' %}</script>
+		<script type="text/javascript">{% include '../assets/js/modules/counter.js' %}</script>
+		<script type="text/javascript">{% include '../assets/js/modules/custom.js' %}</script>
+	</body>
+</html>
