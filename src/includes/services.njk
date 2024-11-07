@@ -1,0 +1,68 @@
+<div id="services" class="section sec-testimonials">
+	<div class="container">
+		<div class="row mb-5 align-items-center">
+			<div class="col-md-6">
+				<h2 class="font-weight-bold heading text-primary mb-4 mb-md-0">I nostri servizi</h2>
+			</div>
+			<div class="col-md-6 text-md-end">
+				<div id="testimonial-nav">
+					<span class="prev" data-controls="prev">Prec</span>
+					<span class="next" data-controls="next">Succ</span>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-4"></div>
+		</div>
+		<div class="testimonial-slider-wrap">
+			<div class="testimonial-slider">
+				{% for service in services %}
+					<div class="item">
+						<div class="testimonial">
+							<img src="{{ '/assets/img/services/service-' ~ loop.index ~ '.jpg' | url }}" alt="{{ service.title }}" class="img-fluid mb-4">
+							<h3 class="h5 text-primary">{{ service.title }}</h3>
+							<h4 class="h6 text-black mb-4">{{ service.subtitle }}</h4>
+							<blockquote>
+								<p>{{ service.body }}</p>
+							</blockquote>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</div>
+<section class="features-1 bg-light">
+	<div class="container">
+		<div class="row">
+			<div class="col-6 col-lg-3"  data-aos="fade-up" data-aos-delay="300">
+				<div class="box-feature">
+					<span class="flaticon-house mb-4"></span>
+					<h3 class="mb-3">Stime immobiliari</h3>
+					<h3 class="mb-3">Certificazione energetica APE</h3>
+				</div>
+			</div>
+			<div class="col-6 col-lg-3"  data-aos="fade-up" data-aos-delay="400">
+				<div class="box-feature">
+					<span class="flaticon-house-1 mb-4"></span>
+					<h3 class="mb-3">Preliminare di compravendita</h3>
+					<h3 class="mb-3">Atto notarile</h3>
+				</div>
+			</div>
+			<div class="col-6 col-lg-3"  data-aos="fade-up" data-aos-delay="500">
+				<div class="box-feature">
+					<span class="flaticon-house-3 mb-4"></span>
+					<h3 class="mb-3">Consulenza mutui</h3>
+					<h3 class="mb-3">Bonus ristrutturazioni</h3>
+				</div>
+			</div>
+			<div class="col-6 col-lg-3"  data-aos="fade-up" data-aos-delay="600">
+				<div class="box-feature">
+					<span class="flaticon-building mb-4"></span>
+					<h3 class="mb-3">Contratti di locazione</h3>
+					<h3 class="mb-3">Volture utenze</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
