@@ -1,0 +1,51 @@
+<div id="properties" class="section">
+	<div class="container">
+		<div class="row mb-5 align-items-center">
+			<div class="col-lg-6">
+				<h2 class="font-weight-bold text-primary heading">Immobili in Vendita</h2>
+			</div>
+			<div class="col-lg-6 text-lg-end">
+				<p><a href="https://www.agenziavalcalepio.it/" target="_blank" class="btn btn-primary text-white py-3 px-4">Vedi tutti</a></p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<div class="property-slider-wrap">
+					<div class="property-slider">
+						{% for property in properties %}
+							{% if loop.index <= 9 %}
+								<div class="property-item">
+									<a href="{{ property.url }}" class="img" target="_blank">
+										<img src="{{ property.image | replace( 'https://', 'https://images.weserv.nl/?url=' ) }}&w=600&h=600&fit=cover&a=attention" alt="{{ property.title }}" class="img-fluid">
+									</a>
+									<div class="property-content">
+										<div class="price mb-2"><span>{{ property.price if property.price else 'Non dichiarato' }}</span></div>
+										<div>
+											<span class="d-block mb-2">{{ property.title | safe }}{% if property.sqm != 0 %} ({{ property.sqm }} m<sup>2</sup>){% endif %}</span>
+											<span class="city d-block mb-3">{{ property.city }}</span>
+											<div class="specs d-flex mb-4">
+												<span class="d-block d-flex align-items-center me-3">
+													<span class="icon-bed me-2"></span>
+													<span class="caption">{{ property.bed }} {{ 'camera' if property.bed == 1 else 'camere' }}</span>
+												</span>
+												<span class="d-block d-flex align-items-center">
+													<span class="icon-bath me-2"></span>
+													<span class="caption">{{ property.bath }} {{ 'bagno' if property.bath == 1 else 'bagni' }}</span>
+												</span>
+											</div>
+											<a href="{{ property.url }}" class="btn btn-primary py-2 px-3" target="_blank">Dettagli</a>
+										</div>
+									</div>
+								</div>
+							{% endif %}
+						{% endfor %}
+					</div>
+					<div id="property-nav" class="controls" tabindex="0" aria-label="Carousel Navigation">
+						<span class="prev" data-controls="prev" aria-controls="property" tabindex="-1">Prec</span>
+						<span class="next" data-controls="next" aria-controls="property" tabindex="-1">Succ</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
