@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
-  var navbar = document.getElementById('navbar_top')
-  var navbarLinks = document.querySelectorAll('#navbar_top .nav-link')
+  var navbar = document.getElementById('navbar-top')
+  var navbarLinks = document.querySelectorAll('#navbar-top .nav-link')
 
   function isSectionVisible(section) {
     var rect = section.getBoundingClientRect()
