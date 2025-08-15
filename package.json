@@ -1,0 +1,31 @@
+{
+  "name": "agenziavalcalepio.bg.it",
+  "version": "3.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install": "npm i file:src/submodules/base",
+    "clean": "rm -rf ./.cache ./dist ./node_modules ./src/submodules/base/node_modules ./src/assets/css/vendor",
+    "link": "npm link gulp gulp-rename gulp-download gulp-clean-css gulp-uglify gulp-concat gulp-replace gulp-google-webfonts",
+    "gulp": "gulp",
+    "setup": "npm-run-all -s clean install link gulp",
+    "serve": "ELEVENTY_ENV=development npx @11ty/eleventy --serve",
+    "start": "npm-run-all -s setup -p serve",
+    "build": "npm run setup && ELEVENTY_ENV=production npx @11ty/eleventy",
+    "debug": "DEBUG=* npx @11ty/eleventy"
+  },
+  "author": "Raffaella Rinaldi",
+  "license": "ISC",
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://raffaellarinaldi@github.com/raffaellarinaldi/agimmobiliarevalcalepio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/raffaellarinaldi/agimmobiliarevalcalepio/issues"
+  },
+  "homepage": "https://github.com/raffaellarinaldi/agimmobiliarevalcalepio#readme",
+  "dependencies": {
+    "11tybase": "file:src/submodules/base"
+  }
+}
