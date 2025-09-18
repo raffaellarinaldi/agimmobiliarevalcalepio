@@ -1,0 +1,8 @@
+---
+eleventyExcludeFromCollections: true
+layout: null
+permalink: /sitemap.xml
+eleventyImport:
+  collections: ['all']
+---
+{% sitemap collections.all | excludeDrafts %}
