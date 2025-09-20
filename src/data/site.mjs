@@ -21,10 +21,10 @@ export default {
     vat: '02633820168',
     network: {
         facebook: { name: 'Facebook', link: 'https://facebook.com/Agenzia-immobiliare-Valcalepio-551357054962575', icon: 'facebook' },
-        youtube: { name: 'YouTube', link: 'https://youtube.com/@immobiliarevalcalepio', icon: 'youtube' },
         google: { name: 'Google', link: 'https://g.page/agenzia-immobiliare-valcalepio?share', icon: 'google' },
         linkedin: { name: 'LinkedIn', link: 'https://linkedin.com/in/sergio-andrea-manenti-056a42119', icon: 'linkedin' },
+        mlsagentre: { name: 'MlsAgentRE', link: 'https://mlsagentre.it/sito/43461' },
         website: { name: 'Sito principale', link: 'https://agenziavalcalepio.it' },
-        mlsagentre: { name: 'MlsAgentRE', link: 'https://mlsagentre.it/sito/43461' }
+        youtube: { name: 'YouTube', link: 'https://youtube.com/@immobiliarevalcalepio', icon: 'youtube' }
     }
 }

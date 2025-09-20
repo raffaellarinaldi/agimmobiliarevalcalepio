@@ -58,12 +58,12 @@
           <div class="widget">
             <h3>{{ default.footer.websites.title }}</h3>
             <ul class="list-unstyled links">
-              {% for key, site in site.network | selectItems({ prop: 'icon', negate: true, withKey: true }) %}
+              {% for key, site in site.network | selectItems({ prop: 'icon', negate: true, withKey: true, keys: ['website', 'mlsagentre'] }) %}
                 <li><a href="{{ site.link }}" target="_blank" rel="noopener">{{ site.name }}</a></li>
               {% endfor %}
             </ul>
             <ul class="list-unstyled social">
-              {% for key, site in site.network | selectItems({ prop: 'icon', withKey: true }) %}
+              {% for key, site in site.network | selectItems({ prop: 'icon', withKey: true, keys: ['facebook', 'youtube', 'google', 'linkedin'] }) %}
                 <li>
                   <a href="{{ site.link }}" target="_blank" rel="nofollow noreferrer noopener">
                     <span class="icon-{{ site.icon }}"></span>
