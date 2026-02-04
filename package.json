@@ -1,0 +1,29 @@
+{
+  "name": "agenziavalcalepio.bg.it",
+  "version": "3.0.0",
+  "description": "Gestioni immobiliari a Castelli Calepio (BG)",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf ./.cache ./dist ./node_modules ./src/assets/css/vendor",
+    "link": "npm link gulp gulp-rename gulp-download gulp-clean-css gulp-uglify gulp-concat gulp-replace gulp-google-webfonts",
+    "gulp": "gulp",
+    "setup": "npm-run-all -s clean link gulp",
+    "serve": "ELEVENTY_ENV=development npx @11ty/eleventy --serve",
+    "build": "ELEVENTY_ENV=production npx @11ty/eleventy",
+    "debug": "DEBUG=* npx @11ty/eleventy"
+  },
+  "author": "Raffaella Rinaldi",
+  "license": "ISC",
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://raffaellarinaldi@github.com/raffaellarinaldi/agimmobiliarevalcalepio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/raffaellarinaldi/agimmobiliarevalcalepio/issues"
+  },
+  "homepage": "https://github.com/raffaellarinaldi/agimmobiliarevalcalepio#readme",
+  "dependencies": {
+    "11tybase": "file:src/submodules/base"
+  }
+}

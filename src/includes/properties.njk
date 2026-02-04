@@ -1,0 +1,68 @@
+{% if default.properties %}
+  <div id="properties" class="section">
+    <div class="container">
+      <div class="row mb-5 align-items-center">
+        <div class="col-lg-6">
+          <h2 class="font-weight-bold text-primary heading">{{ default.properties.title }}</h2>
+        </div>
+        <div class="col-lg-6 text-lg-end">
+          <p>
+            <a class="btn btn-primary text-white py-3 px-4" href="{{ default.properties.more.link }}" target="_blank">{{ default.properties.more.label }}</a>
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          {% if default.properties.body and default.properties.body.length > 0 %}
+            <div class="property-slider-wrap">
+              <div class="property-slider">
+                {% for property in default.properties.body | limit(0, 9) %}
+                  {% if property.url and property.title and property.image and property.city %}
+                    <div class="property-item">
+                      <a class="img" href="{{ property.url | replace('https://www.', 'https://') }}" target="_blank">
+                        <img class="img-fluid" src="{{ property.image | replace('https://', 'https://images.weserv.nl/?url=') ~ '&w=600&h=600&fit=cover&a=attention' }}" alt="{{ property.title }}">
+                      </a>
+                      <div class="property-content">
+                        <div class="price mb-2">
+                          <span>{{ property.price if property.price else 'n/d' }}</span>
+                        </div>
+                        <div>
+                          <span class="d-block mb-2">
+                            {{ property.title | safe }}
+                            {% if property.sqm != 0 %}
+                              {{ ('(' ~ property.sqm ~ ' ' ~ 'm<sup>2</sup>)') | safe }}
+                            {% endif %}
+                          </span>
+                          <span class="city d-block mb-3">{{ property.city }}</span>
+                          <div class="specs d-flex mb-4">
+                            <span class="d-block d-flex align-items-center me-3">
+                              <span class="icon-bed me-2"></span>
+                              <span class="caption">{{ property.bed ~ ' ' ~ (default.properties.bed[0] if property.bed == 1 else default.properties.bed[1]) }}</span>
+                            </span>
+                            <span class="d-block d-flex align-items-center">
+                              <span class="icon-bath me-2"></span>
+                              <span class="caption">{{ property.bath ~ ' ' ~ (default.properties.bath[0] if property.bath == 1 else default.properties.bath[1]) }}</span>
+                            </span>
+                          </div>
+                          <a class="btn btn-primary py-2 px-3" href="{{ property.url | replace('https://www.', 'https://') }}" target="_blank">{{ default.properties.action }}</a>
+                        </div>
+                      </div>
+                    </div>
+                  {% endif %}
+                {% endfor %}
+              </div>
+              <div id="property-nav" class="controls" tabindex="0" aria-label="{{ default.properties.aria.label }}">
+                <span class="prev" data-controls="prev" aria-controls="property" tabindex="-1">{{ default.properties.pagination.prev }}</span>
+                <span class="next" data-controls="next" aria-controls="property" tabindex="-1">{{ default.properties.pagination.next }}</span>
+              </div>
+            </div>
+          {% else %}
+            <div class="alert alert-warning text-center w-50 mx-auto">
+              <p class="mb-0">{{ default.properties.messages.error }}</p>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}

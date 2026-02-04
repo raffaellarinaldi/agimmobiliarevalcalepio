@@ -1,0 +1,26 @@
+{% if default.modals %}
+  {% set pages = [
+    collections.all | getPost('privacy')
+  ] %}
+  {% for page in pages %}
+    <div class="modal fade" id="{{ page.fileSlug ~ 'Modal' }}" tabindex="-1" aria-hidden="true" data-nosnippet>
+      <div class="modal-dialog modal-dialog-scrollable modal-xl">
+        <div class="modal-content rounded-0">
+          <div class="modal-header">
+            <h2 class="modal-title h4">{{ page.data.title }}</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">{{ page.templateContent | safe }}</div>
+          {% if page.fileSlug == 'privacy' %}
+            <div class="modal-footer">
+              {% consentButtons lang, [
+                { action: 'accept', className: 'btn btn-primary btn-sm px-3 py-2 fw-semibold', extra: 'data-bs-dismiss="modal"' },
+                { action: 'reject', className: 'btn btn-primary btn-sm px-3 py-2 fw-semibold', extra: 'data-bs-dismiss="modal"' }
+              ] %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+{% endif %}

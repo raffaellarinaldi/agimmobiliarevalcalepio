@@ -1,0 +1,169 @@
+/*
+* Template Name: Property
+* Template Author: Untree.co
+* Template License: https://creativecommons.org/licenses/by/3.0/
+* Template Version: 1.0
+* Author URI: https://untree.co/
+* Twitter: https://twitter.com/Untree_co
+* Facebook: https://web.facebook.com/Untree.co/
+* Plus library from: https://bootstrap-menu.com/detail-fixed-onscroll.html
+*/
+
+$cream-1: #F4F3EF;
+$cream-2: #F9F9F7;
+$cream-3: #EAE8E0;
+$burgundy-1: #9F1C3B;
+$burgundy-2: #790A1A;
+//$burgundy-3: #7A0300;
+//$brick: #B24A3B;
+$black: #1D1105;
+$white: #FFFFFF;
+$body-color: #361108;
+$primary: $burgundy-1;
+$secondary: $burgundy-2;
+$light: $cream-2;
+$font-family-sans-serif: 'Work Sans', sans-serif;
+$font-family-sans-serif-secondary: 'Comfortaa', sans-serif;
+$btn-border-radius: 30px;
+
+:root {
+    color-scheme: light;
+    --cc-font-family: #{$font-family-sans-serif};
+    --cc-modal-border-radius: 0;
+    --cc-btn-border-radius: #{$btn-border-radius};
+	// --cc-modal-transition-duration
+	// --cc-link-color
+	// --cc-modal-margin
+	--cc-z-index: 1000;
+	// --cc-bg
+	--cc-primary-color: #{$primary};
+    --cc-secondary-color: #{$black};
+    --cc-btn-primary-bg: #{$primary};
+    --cc-btn-primary-color: #{$white};
+	// --cc-btn-primary-border-color
+	--cc-btn-primary-hover-bg: #{$primary};
+    --cc-btn-primary-hover-color: #{$white};
+	// --cc-btn-primary-hover-border-color
+	--cc-btn-secondary-bg: #{$cream-3};
+    --cc-btn-secondary-color: #{$black};
+	//--cc-btn-secondary-border-color
+	--cc-btn-secondary-hover-bg: #{$cream-3};
+    --cc-btn-secondary-hover-color: #{$black};
+	--cc-btn-secondary-hover-border-color: #{$cream-3};
+	// --cc-separator-border-color
+	// --cc-toggle-on-bg
+	// --cc-toggle-off-bg
+	// --cc-toggle-on-knob-bg
+	// --cc-toggle-off-knob-bg
+	// --cc-toggle-enabled-icon-color
+	// --cc-toggle-disabled-icon-color
+	// --cc-toggle-readonly-bg
+	// --cc-toggle-readonly-knob-bg
+	// --cc-toggle-readonly-knob-icon-color
+	// --cc-section-category-border
+	// --cc-cookie-category-block-bg
+	// --cc-cookie-category-block-border
+	// --cc-cookie-category-block-hover-bg
+	// --cc-cookie-category-block-hover-border
+	// --cc-cookie-category-expanded-block-bg
+	// --cc-cookie-category-expanded-block-hover-bg
+	// --cc-overlay-bg
+	// --cc-webkit-scrollbar-bg
+	// --cc-webkit-scrollbar-hover-bg
+	--cc-footer-bg: #{$cream-2};
+	// --cc-footer-color
+	--cc-footer-border-color: #{$cream-2};
+	// --cc-pm-toggle-border-radius
+    --im-font-family: #{$font-family-sans-serif};
+    --im-color: #{$white};
+    //--im-bg
+    --im-link-color: #{$white};
+    --im-link-hover-color: #{$cream-1};
+    --im-btn-color: #{$white};
+    --im-btn-bg: #{$primary};
+    --im-btn-hover-bg: #{$primary};
+    //--im-btn-active-box-shadow
+    --im-btn-s-color: #{$black};
+    --im-btn-s-bg: #{$light};
+    --im-btn-s-hover-bg: #{$light};
+    --im-btn-s-active-bg: #{$light};
+    //--im-overlay-bg
+}
+
+.pm__close-btn {
+	--cc-btn-border-radius: 0;
+	--cc-btn-secondary-bg: #{$white};
+	// --cc-btn-secondary-color
+	--cc-btn-secondary-border-color: #{$white};
+	--cc-btn-secondary-hover-bg: #{$white};
+	// --cc-btn-secondary-hover-color
+	--cc-btn-secondary-hover-border-color: #{$white};
+}
+
+.pm__body {
+	--cc-btn-border-radius: 0;
+}
+
+@import
+'./vendor/google/fonts',
+'./vendor/bootstrap/mixins',
+'./vendor/bootstrap/functions',
+'./vendor/bootstrap/variables',
+'./vendor/bootstrap/bootstrap',
+//'./modules/site-navbar',
+'./modules/site-base',
+'./modules/site-blocks',
+'./modules/site-footer';
+
+#navbar-top, .menu-bg-wrap {
+	background-color: $cream-1;
+}
+
+.hero {
+	background-position: center center;
+}
+
+.feature-h {
+	.wrap-icon {
+		background: $cream-3;
+	}
+}
+
+.img-about {
+	&.dots {
+		&::after {
+			background: url('../img/theme/dots.png') no-repeat;
+		}
+	}
+}
+
+div[data-service] {
+	.cll {
+		.c-la-b,
+		.c-l-b {
+			border-radius: $btn-border-radius !important;
+		}
+	}
+}
+
+.site-footer {
+	a {
+		color: inherit;
+		&:hover {
+			color: $primary;
+		}
+	}
+	.social {
+		li {
+			a {
+				background: $cream-3;
+				color: $black;
+			}
+		}
+	}	
+}
+
+.modal-open,
+.modal-open .fixed-top {
+	padding-right: 0 !important;
+}

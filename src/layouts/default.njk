@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+	<head>
+		<title>{{ default.meta.title }}</title>
+		{% if eleventy.environment != 'development' %}
+			<base href="{{ default.meta.productionUrl }}">
+		{% endif %}
+		<meta charset="{{ default.meta.charset }}">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="{{ default.meta.description }}">
+		<meta name="generator" content="{{ eleventy.generator }}">
+		<link rel="icon" href="{{ '/favicon.ico' | url }}">
+		<link rel="stylesheet" href="{{ '/assets/css/' ~ ('icons.css' if eleventy.environment == 'development' else 'icons.min.css') | url }}">
+		<link rel="stylesheet" href="{{ '/assets/css/tiny-slider.min.css' | url }}">
+		<link rel="stylesheet" href="{{ '/assets/css/aos.min.css' | url }}">
+		<link rel="stylesheet" href="{{ '/assets/css/cookieconsent.min.css' | url }}">
+		<link rel="stylesheet" href="{{ '/assets/css/iframemanager.min.css' | url }}">
+		<link rel="stylesheet" href="{{ ('/assets/css/styles' ~ ('.css' if eleventy.environment == 'development' else '.min.css')) | url }}">
+	</head>
+	<body>
+		{% include 'navigation.njk' %}
+		{% include 'hero.njk' %}
+		{% include 'properties.njk' %}
+		{% include 'about.njk' %}
+		{% include 'services.njk' %}
+		{% include 'footer.njk' %}
+		{% include 'modals.njk' %}
+		<div id="overlayer"></div>
+		<div class="loader">
+			<div class="spinner-border" role="status">
+				<span class="visually-hidden">Loading...</span>
+			</div>
+		</div>
+		<script src="{{ '/assets/js/bootstrap.bundle.min.js' | url }}"></script>
+		<script src="{{ '/assets/js/tiny-slider.min.js' | url }}"></script>
+		<script src="{{ '/assets/js/aos.min.js' | url }}"></script>
+		<script src="{{ '/assets/js/cookieconsent.umd.min.js' | url }}"></script>
+		<script src="{{ '/assets/js/iframemanager.min.js' | url }}"></script>
+		<script src="{{ ('/assets/js/scripts' ~ ('.js' if eleventy.environment == 'development' else '.min.js')) | url }}"></script>
+	</body>
+</html>
