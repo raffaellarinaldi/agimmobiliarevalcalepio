@@ -19,32 +19,29 @@
                 {% for property in default.properties.body | limit(0, 9) %}
                   {% if property.url and property.title and property.image and property.city %}
                     <div class="property-item">
-                      <a class="img" href="{{ property.url | replace('https://www.', 'https://') }}" target="_blank">
-                        <img class="img-fluid" src="{{ property.image | replace('https://', 'https://images.weserv.nl/?url=') ~ '&w=600&h=600&fit=cover&a=attention' }}" alt="{{ property.title }}">
+                      <a class="img" href="{{ property.url }}" target="_blank">
+                        <img class="img-fluid" src="{{ property.image }}" alt="{{ property.title }}">
                       </a>
                       <div class="property-content">
                         <div class="price mb-2">
-                          <span>{{ property.price if property.price else 'n/d' }}</span>
+                          <span>{{ property.price }}</span>
                         </div>
                         <div>
                           <span class="d-block mb-2">
-                            {{ property.title | safe }}
-                            {% if property.sqm != 0 %}
-                              {{ ('(' ~ property.sqm ~ ' ' ~ 'm<sup>2</sup>)') | safe }}
-                            {% endif %}
+                            {{ (property.title ~ ' ' ~ property.sqm) | safe }}
                           </span>
                           <span class="city d-block mb-3">{{ property.city }}</span>
                           <div class="specs d-flex mb-4">
                             <span class="d-block d-flex align-items-center me-3">
                               <span class="icon-bed me-2"></span>
-                              <span class="caption">{{ property.bed ~ ' ' ~ (default.properties.bed[0] if property.bed == 1 else default.properties.bed[1]) }}</span>
+                              <span class="caption">{{ property.bed }}</span>
                             </span>
                             <span class="d-block d-flex align-items-center">
                               <span class="icon-bath me-2"></span>
-                              <span class="caption">{{ property.bath ~ ' ' ~ (default.properties.bath[0] if property.bath == 1 else default.properties.bath[1]) }}</span>
+                              <span class="caption">{{ property.bath }}</span>
                             </span>
                           </div>
-                          <a class="btn btn-primary py-2 px-3" href="{{ property.url | replace('https://www.', 'https://') }}" target="_blank">{{ default.properties.action }}</a>
+                          <a class="btn btn-primary py-2 px-3" href="{{ property.url }}" target="_blank">{{ default.properties.action }}</a>
                         </div>
                       </div>
                     </div>
